@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="{{ url_for('header.static', filename='css/header.css') }}"/>
+
+
+{% if session.login %}
+    <a href="/logout">logout</a>
+{%else%}
+    <div id="log-in">
+        <div class="Signin">
+            <a href="{{ url_for('login.index') }}">
+                <p style="text-align:left"><img src={{url_for('header.static',filename='media/Signin.png')}} alt="log-in/Sign in" width="90" height="30" /></p>
+            </a>
+
+        </div>
+    </div>
+{%endif%}
+
+<div id="header">
+    <div id="logo">
+        <a href="{{url_for('homepage.index') }}">
+            <p style="text-align:center;"><img id="logo_img" src="static/media/img/מליכה.png" alt=" logo">
+        </a>
+    </div>
+
+    <div class="topnav">
+        <p style="text-align:center; color:white;">
+            <a href="{{ url_for('homepage.index') }}">Homepage</a>
+            <a href="{{ url_for('catalog.index') }}">Catalog</a>
+            <a href="{{ url_for('about.index') }}">About</a>
+        </p>
+    </div>
+</div>
+
+
